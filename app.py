@@ -121,6 +121,18 @@ def logout():
     current_user_rollno = None
     return redirect(url_for('home'))
 
+@app.route('/returned-list')
+def returned_list():
+    # students = dbh.get_students()
+    requests = dbh.get_returned_db()
+    return render_template('returned-list.html', requests=requests)
+
+@app.route('/returned', methods=['GET'])
+def returned():
+    id = request.args.get('id')
+    dbh.book_returned(id)
+    return redirect(url_for('returned_list'))
+
 #############################################################################
 #                               Student Interface                           #
 #############################################################################
