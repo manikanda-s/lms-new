@@ -88,7 +88,16 @@ class DB_Helper:
         issued_book.status = "issued"
         db.session.commit()
 
+    def get_returned_db(self):
+        return Requested.query.filter_by(is_issued = 'yes').all()
 
+    def book_returned(self, id):
+        req = Requested.query.filter_by(id = id).first()
+        issuedBook = IssuedBook.query.filter_by(id = id).first()
+        db.session.delete(req)
+        db.session.delete(issuedBook)
+
+        db.session.commit()
 
 
 
