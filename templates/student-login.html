@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="form-title h1">
+        Student Login
+    </div>
+    <div class="myform mt-5">
+    <form action="{{url_for('issued_books')}}" method="post">
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Roll Number</label>
+        <input type="text" class="form-control" name="rollno" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <br>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+        <br>
+        <div class="my-btn d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="{{url_for('home')}}" class="btn btn-secondary ms-5 ">back</a>
+        </div>
+    </form>
+    </div>
+
+
+
+    
+{% endblock %}

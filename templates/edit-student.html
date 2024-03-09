@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Edit Student
+{% endblock %}
+
+{% block content %}
+<div class="form-title h1">
+    Edit Student
+</div>
+<div class="myform mt-5">
+<form action="{{url_for('edit_student', id=student.id)}}" method="post">
+    <div class="mb-3">
+    <label for="studentName" class="form-label">Student Name</label>
+    <input type="text" class="form-control" name="studentName" id="studentName" value="{{student.name}}">
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="StudentRollNo" class="form-label">Student Roll Number</label>
+        <input type="text" class="form-control" name="StudentRollNo" id="StudentRollNo" value="{{student.rollno}}">
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" name="dob" id="dob" value="{{student.dob}}">
+    </div>
+    <br>
+    <div class="my-btn d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{{url_for('student_list')}}" class="btn btn-secondary ms-5 ">back</a>
+    </div>
+</form>
+</div>
+
+
+<!-- <form action="{{url_for('edit_student', id=student.id)}}" method="post">
+    <label for="studentName">Student Name</label>
+    <input type="text" name="studentName" id="studentName" value="{{student.name}}">
+
+    <label for="StudentRollNo">Student Roll Number</label>
+    <input type="text" name="StudentRollNo" id="StudentRollNo" value="{{student.rollno}}">
+
+    <label for="dob">Student Roll Number</label>
+    <input type="text" name="dob" id="dob" value="{{student.dob}}">
+
+
+    <input type="submit" value="Update">
+    <a href="{{url_for('student_list')}}">back</a>
+</form> -->
+
+{% endblock %}

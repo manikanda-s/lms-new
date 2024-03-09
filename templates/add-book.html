@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Book
+{% endblock %}
+
+{% block content %}
+    <div class="form-title h1">
+        Add Book
+    </div>
+    <div class="myform mt-5">
+    <form action="{{url_for('add_book')}}" method="post">
+        <div class="mb-3">
+        <label for="bookName" class="form-label">Book Name</label>
+        <input type="text" class="form-control" name="bookName" id="bookName">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="authorName" class="form-label">Author Name</label>
+            <input type="text" class="form-control" name="authorName" id="authorName">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="total" class="form-label">Total Copies</label>
+            <input type="text" class="form-control" name="total" id="total">
+        </div>
+        <br>
+        <div class="my-btn d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="{{url_for('book_list')}}" class="btn btn-secondary ms-5 ">back</a>
+        </div>
+    </form>
+    </div>
+
+
+
+    <!-- <form action="{{url_for('add_book')}}" method="post">
+        <label for="bookName">Book Name</label>
+        <input type="text" name="bookName" id="bookName">
+
+        <label for="authorName">Author Name</label>
+        <input type="text" name="authorName" id="authorName">
+
+        <label for="total">Total Copies</label>
+        <input type="text" name="total" id="total">
+
+        <input type="submit" value="Add">
+        <a href="{{url_for('book_list')}}">back</a>
+    </form> -->
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'admin-page.html' %}
+
+
+{% block page_title %} Request List {% endblock %}
+
+{% block table %}
+<div class="div-center">
+    <div class="book-list">    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Student Name</th>
+                    <th>Request Date</th>
+                    <th>Book Name</th>
+                    <th>Author Name</th>
+                    <th>Issued</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                <tr>
+                    <td>{{request.student_rollno}}</td>
+                    <td>{{request.student_name}}</td>
+                    <td>{{request.date}}</td>
+                    <td>{{request.book_name}}</td>
+                    <td>{{request.author_name}}</td>
+                    <td><a href="{{url_for('issued', id=request.id)}}">Yes</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

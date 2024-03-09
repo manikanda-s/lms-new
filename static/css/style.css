@@ -1,0 +1,128 @@
+a {
+    text-decoration: none;
+}
+
+.home-container img {
+    width: 100%;
+    height: 100vb;
+}
+
+.home-container .black-screen {
+    width: 100%;
+    height: 100vb;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+}
+.home-container .home-link {
+    width: 100%;
+    height: 100vb;
+    position: absolute;
+    top: 0;
+}
+.home-container .home-link .box {
+    width: 100%;
+    height: 100vb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-container .home-link .box .card {
+    background-color: white;
+    width: 20%;
+    min-width: 250px;
+    box-shadow: 0 0 5px white;
+    margin: auto 20px;
+}
+.home-container .home-link .box  img{
+    height: 30vb;
+    /* min-height: 250px; */
+}
+
+.home-container .home-link .box .card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 550px) {
+    .home-container .home-link .box {
+        flex-direction: column;
+    }
+    .home-container .home-link .box  img{
+        height: 20vb;
+    }
+    .home-container .home-link .box .card {
+        /* width: 80%; */
+        min-width: 200px;
+
+    }
+}
+
+/* admin login */
+.myform {
+    display: flex;
+    justify-content: center;
+}
+.myform form {
+    width: 50%;
+    padding: 10px;
+    box-shadow: 0 0 2px black;
+}
+
+.form-title {
+    text-align: center;
+}
+@media only screen and (max-width: 500px) {
+    .myform form {
+        width: 95%;
+        padding: 10px;
+        box-shadow: 0 0 2px black;
+    }
+}
+
+.logout {
+    height:40px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+.div-center {
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 500px) {
+    .page-title {
+        font-size: 20px;
+    }
+    .logout {
+        font-size: 10px;
+        font-weight: bold;
+        /* padding: 2px; */
+        height: 30px;
+    }
+    .admin-header {
+        width: 99%;
+    }
+
+}
+
+/* book-list */
+.book-list, .student-list {
+    margin-top: 30px;
+    width: 80%;
+    overflow: auto;
+}
+@media only screen and (max-width: 500px) {
+    .book-list, .student-list {
+        width: 100%;
+    }
+}
+
+.close-btn {
+    background-color: #fff;
+}

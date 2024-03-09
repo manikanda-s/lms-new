@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Student
+{% endblock %}
+
+{% block content %}
+<div class="form-title h1">
+    Add Student
+</div>
+<div class="myform mt-5">
+<form action="{{url_for('add_student')}}" method="post">
+    <div class="mb-3">
+    <label for="studentName" class="form-label">Student Name</label>
+    <input type="text" class="form-control" name="studentName" id="studentName">
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="StudentRollNo" class="form-label">Student Roll Number</label>
+        <input type="text" class="form-control" name="StudentRollNo" id="StudentRollNo">
+    </div>
+    <br>
+    <div class="mb-3">
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" name="dob" id="dob">
+    </div>
+    <br>
+    <div class="my-btn d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{{url_for('student_list')}}" class="btn btn-secondary ms-5 ">back</a>
+    </div>
+</form>
+</div>
+
+
+    <!-- <form action="{{url_for('add_student')}}" method="post">
+        <label for="studentName">Student Name</label>
+        <input type="text" name="studentName" id="studentName">
+
+        <label for="StudentRollNo">Student Roll Number</label>
+        <input type="text" name="StudentRollNo" id="StudentRollNo">
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob">
+
+        <input type="submit" value="Add">
+        <a href="{{url_for('student_list')}}">back</a>
+    </form> -->
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Request Book
+{% endblock %}
+
+{% block content %}
+    <div class="form-title h1">
+        Request Book
+    </div>
+    <div class="myform mt-5">
+    <form action="{{url_for('search_book')}}" method="post">
+        <div class="mb-3">
+        <label for="bookName" class="form-label">Book Name</label>
+        <input type="search" class="form-control" name="bookName" id="bookName">
+        </div>
+        <br>
+        <!-- <div class="mb-3">
+            <label for="authorName" class="form-label">Author Name</label>
+            <input type="text" class="form-control" name="authorName" id="authorName">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="total" class="form-label">Total Copies</label>
+            <input type="text" class="form-control" name="total" id="total">
+        </div>
+        <br> -->
+        <div class="my-btn d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="{{url_for('issued_books')}}" class="btn btn-secondary ms-5 ">back</a>
+        </div>
+    </form>
+    </div>
+
+    <div class="div-center">
+        <div class="book-list">    
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Total Copies</th>
+                        <th>Available</th>
+                        <th>Request</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr>
+                        <td>{{book.name}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.total}}</td>
+                        <td>{{book.available}}</td>
+                        <td><a href="{{url_for('send_req', book_id=book.id)}}">Send</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

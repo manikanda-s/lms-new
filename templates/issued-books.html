@@ -1,0 +1,36 @@
+{% extends 'student-page.html' %}
+
+{% block page_title %} Issued Books {% endblock %}
+
+{% block table %}
+<div class="div-center">
+    <div class="book-list">    
+        <!-- <a href="{{url_for('add_book')}}" class="btn btn-primary">Add Book</a> -->
+        <p>Hello {{student.name}}</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Requested Date</th>
+                    <th>Issued Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for issued in issued_list %}
+                <tr>
+                    <td>{{issued.name}}</td>
+                    <td>{{issued.author}}</td>
+                    <td>{{issued.req_date}}</td>
+                    <td>{{issued.issued_date}}</td>
+                    <td>{{issued.return_date}}</td>
+                    <td>{{issued.status}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

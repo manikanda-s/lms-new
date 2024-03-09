@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Student Page
+{% endblock %}
+
+{% block content %}
+<div class="div-center">
+    <header class="admin-header">
+        <div class="side-nav">
+            <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <img src="{{url_for('static', filename='images/menu.png')}}" alt="" class="bar-img">
+            </a>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fs-1" id="offcanvasExampleLabel">Dashboard</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+
+                <a href="{{url_for('issued_books')}}" class="side-link ff-1">Issued Books</a> <br>
+                <a href="{{url_for('request_book')}}" class="side-link ff-1">Request Book</a> <br>
+                </div>
+            </div>
+            </div>
+        </div>
+        <p class="page-title h2">{% block page_title %} {% endblock %}</p>
+        <a href="{{url_for('logout')}}" class="logout btn btn-primary">Logout</a>
+    </header>
+</div>
+ 
+{% block table %}
+{% endblock %}
+    
+{% endblock %}

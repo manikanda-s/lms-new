@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Admin Page
+{% endblock %}
+
+{% block content %}
+    <div class="div-center">
+        <header class="admin-header">
+            <div class="side-nav">
+                <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <img src="{{url_for('static', filename='images/menu.png')}}" alt="" class="bar-img">
+                </a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fs-1" id="offcanvasExampleLabel">Dashboard</h5>
+                    <div class="close-btn">
+                        <button type="button" class="btn-close text-reset btn-primary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                    <a href="{{url_for('book_list')}}" class="side-link ff-1">Books</a> <br>
+                    <a href="{{url_for('student_list')}}" class="side-link ff-1">Students</a> <br>
+                    <a href="{{url_for('request_list')}}" class="side-link ff-1">Requests</a> <br>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <p class="page-title h2">{% block page_title %} {% endblock %}</p>
+            <a href="{{url_for('logout')}}" class="logout btn btn-primary">Logout</a>
+        </header>
+    </div>
+<!-- 
+    <div class="side nav">
+        <p>Dashboard</p>
+        <a href="{{url_for('book_list')}}">Books</a>
+        <a href="{{url_for('student_list')}}">Students</a>
+        <a href="{{url_for('request_list')}}">requests</a>
+    </div> -->
+
+    {% block table %}
+    {% endblock %}
+    
+{% endblock %}
